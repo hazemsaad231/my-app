@@ -1,4 +1,10 @@
 
+interface Post {
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
+}
 const profile = async () => {
 
    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -20,7 +26,7 @@ const profile = async () => {
   </thead>
 
   <tbody>
-    {data.map((post: any) => (
+    {data.map((post: Post) => (
       <tr key={post.id}>
         <td>{post.userId}</td>
         <td>{post.title}</td>
